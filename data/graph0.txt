@@ -1,0 +1,7 @@
+vertex 1
+vertex 2
+vertex 3
+vertex 4
+edge 1 2 1
+edge 2 3 1
+edge 3 4 1

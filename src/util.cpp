@@ -17,8 +17,10 @@ void split(const std::string &s, std::vector<std::string> &result,
 cmdline::parser initCmdLineParser(int argc, char **argv) {
   // Add command line options to the programme.
   cmdline::parser parser;
-  parser.add<std::string>("path", 'p', "the path of the input data file", true,
+  parser.add<std::string>("file", 'f', "the path of the input data file", true,
                           "");
+  parser.add<std::string>("source", 's', "the source vertex", true, "");
+  parser.add<std::string>("target", 't', "the target vertex", true, "");
   // Parse the args in the command line
   parser.parse_check(argc, argv);
 

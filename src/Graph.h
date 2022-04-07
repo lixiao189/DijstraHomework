@@ -21,16 +21,25 @@ private:
   // nextEdge[i] represents the next edge of edge_i.
   // -1 represents edge_i doesn't has next edge
   std::vector<int> nextEdge;
+
+  // preVertex[i] represents the previous vertex of vertex_i
+  std::vector<int> preVertex;
+  // Last target's id
+  int lastTargetID;
+
   // Store the id of vertex
   std::map<std::string, int> vertexIDMap;
+  std::map<int, std::string> vertexName;
 
 public:
-  Graph();
+  Graph(const std::string &pathToFile);
   ~Graph();
 
   void addEdge(const std::string &u, const std::string &v, int weight);
-  int shortestPath(const std::string &u, const std::string &v) const;
-  std::string getShortestPath() const;
   void readGraphFromFile(const std::string &pathToFile);
+  void Dijstra(const std::string *u);
+
+  int shortestPath(const std::string &u, const std::string &v);
+  std::string getShortestPath();
 };
 #endif
